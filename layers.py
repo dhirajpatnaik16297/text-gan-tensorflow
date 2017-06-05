@@ -117,7 +117,7 @@ def recurrent_layer(tensor, cell=None, hidden_dims=128, sequence_length=None, de
                     keep_prob=1.0,
                     return_final_state=False, return_next_cell_input=True, **opts):
     if cell is None:
-        cell = tf.contrib.rnn.BasicRNNCell(hidden_dims, activation=activation)
+        cell = tf.contrib.rnn.BasicRNNCell(hidden_dims, activation=activation,reuse=True)
         # cell = tf.contrib.rnn.LSTMCell(hidden_dims, activation=activation)
 
     if keep_prob < 1.0:
